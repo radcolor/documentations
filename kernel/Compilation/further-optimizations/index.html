@@ -1,0 +1,41 @@
+<h1 class="display-4">Further Optimizations</h1>
+<p class="disc mb-0">
+  Features of kernel
+</p>
+<br>
+<p class="lead">
+  <strong>Speeding up builds with ccache:</strong>
+  Ccache (or “ccache”) is a compiler cache. It speeds up recompilation by caching previous compilations and detecting
+  when the same compilation is being done again. Ccache is free software, released under the GNU General Public License
+  version 3 or later.
+</p>
+<p class="lead">
+  Installing ccache
+</p>
+<pre><code class="language-shell"># For Debian/Ubuntu
+sudo apt-get install ccache
+    
+# For Arch/Garuda/Manjaro
+sudo pacman -S ccache</code></pre>
+<p class="lead">
+  Setting ccache max size (Default 5G)
+</p>
+<pre><code class="language-shell">ccache -M 10G</code></pre>
+<p class="lead">
+  And then finally
+</p>
+<pre><code class="language-shell">export KERNEL_USE_CCACHE=1</code></pre><br>
+<p class="lead">
+  <strong>Compiling Kernel with Link Time Optimizations (LTO):</strong>
+  Link Time Optimization (LTO) refers to program optimization during linking. The linker pulls all object files together
+  and combines them into one program. The linker can see the whole of the program, and can therefore do whole-program
+  analysis and optimization.
+</p>
+<p class="lead">
+  LTO patch if using Clang as compiler:
+</p>
+<pre><code class="language-shell">curl https://raw.githubusercontent.com/theradcolor/patches/master/rad-kernel-clang-lto-patch.patch | git am</code></pre>
+<p class="lead">
+  LTO patch if using GCC as compiler:
+</p>
+<pre><code class="language-shell">curl https://github.com/theradcolor/patches/blob/master/rad-kernel-gcc-lto-patch.patch | git am</code></pre>

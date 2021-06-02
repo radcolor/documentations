@@ -1,0 +1,32 @@
+<h1 class="display-4">Enviroment Setup</h1>
+<p class="disc mb-0">
+  Features of kernel
+</p>
+<br>
+<p class="lead">
+  Install the following packages if you are using <strong>Ubuntu/Debian</strong>
+</p>
+<pre><code class="language-shell">sudo apt-get install git ccache automake flex lzop bison \
+build-essential zip curl make libssl-dev bc libc6 unzip</code></pre>
+<p class="lead">
+  Install the following packages if you are using <strong>Arch/Garuda/Manjaro</strong>
+</p>
+<pre><code class="language-shell">sudo pacman -Sy base-devel bc ccache curl git zip --noconfirm</code></pre>
+<p class="lead">
+  Export architecture
+</p>
+<pre><code class="language-shell">export ARCH=arm64
+export SUBARCH=arm64</code></pre>
+<p class="lead">
+  Export KBUILD_BUILD_USER and KBUILD_BUILD_HOST as well as KBUILD_JOBS(No. of threads to use.)
+</p>
+<pre><code class="language-shell">export KBUILD_BUILD_USER="theradcolor"
+export KBUILD_BUILD_HOST="garuda"
+export KBUILD_JOBS="$(($(grep -c '^processor' /proc/cpuinfo)))"</code></pre>
+<p class="lead">
+  Export KBUILD_COMPILER_STRING(compiler string/name)
+</p>
+<pre><code class="language-shell"># For Clang
+export COMPILER_STRING="$(${COMPILER_PATH}/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' | sed 's/ *$//')"
+# For GCC
+export COMPILER_STRING="$((${COMPILER_PATH}/bin/bin/aarch64-linux-gnu-gcc" --version | head -n 1)"</code></pre>

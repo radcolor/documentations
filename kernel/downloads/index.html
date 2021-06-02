@@ -1,0 +1,70 @@
+<h1 class="display-4">Downloads</h1>
+<p class="disc mb-0">
+  RAD KERNEL for WHYRED, Select available varients to download!
+</p>
+<br>
+<p id="tag_label" class="lead">
+  Latest version: v/x-
+</p>
+<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+  <input type="radio" class="btn-check" name="btntype" id="eas" value="eas" autocomplete="off" checked>
+  <label class="btn btn-selector btn-outline-danger" for="eas">eas</label>
+
+  <input type="radio" class="btn-check" name="btntype" id="hmp" value="hmp" autocomplete="off">
+  <label class="btn btn-selector btn-outline-danger" for="hmp">hmp</label>
+</div>
+<br><br>
+<p class="lead">
+  HMP kernel with default CPU freq table, has balance between power and perf, whereas EAS is an enhancement to power
+  management, placing CPU power directly under the sched.
+</p>
+<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+  <input type="radio" class="btn-check" name="btncam" id="oldcam" value="oldcam" autocomplete="off" checked>
+  <label class="btn btn-selector btn-outline-danger" for="oldcam">oldcam</label>
+
+  <input type="radio" class="btn-check" name="btncam" id="newcam" value="newcam" autocomplete="off">
+  <label class="btn btn-selector btn-outline-danger" for="newcam">newcam</label>
+</div>
+<br><br>
+<p class="lead">
+  The newcam version is for ROMs which using new camera blobs and oldcam version is for ROMs which using old camera
+  blobs.
+</p>
+<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+  <input type="radio" class="btn-check" name="btncompiler" id="clang" value="clang" autocomplete="off" checked>
+  <label class="btn btn-selector btn-outline-danger" for="clang">clang</label>
+
+  <input type="radio" class="btn-check" name="btncompiler" id="gcc" value="gcc" autocomplete="off">
+  <label class="btn btn-selector btn-outline-danger" for="gcc">gcc</label>
+</div>
+<br><br>
+<p class="lead">
+  They are both open-source compiler infrastructures, used to build compilers for a variety of languages, with
+  pretty good code generation.
+</p>
+<br>
+<p class="lead">
+  <strong>Checksum:
+  </strong>
+  Verify hash integrity of zip file.
+</p>
+<div class="btn-group btn-hash" role="group" aria-label="Basic radio toggle button group">
+  <input type="radio" class="btn-check" name="btnhash" id="md5" value="md5" autocomplete="off" checked>
+  <label class="btn btn-selector btn-outline-danger" for="md5">MD5</label>
+
+  <input type="radio" class="btn-check" name="btnhash" id="sha1" value="sha1" autocomplete="off">
+  <label class="btn btn-selector btn-outline-danger" for="sha1">SHA1</label>
+
+  <input type="radio" class="btn-check" name="btnhash" id="sha256" value="sha256" autocomplete="off">
+  <label class="btn btn-selector btn-outline-danger" for="sha256">SHA256</label>
+
+  <input type="radio" class="btn-check" name="btnhash" id="sha512" value="sha512" autocomplete="off">
+  <label class="btn btn-selector btn-outline-danger" for="sha512">SHA512</label>
+</div>
+<br><br>
+<pre><code id="hash-code" class="language-js"></code></pre>
+<br><br>
+<div class="d-grid gap-2">
+  <button id="downloadKernel" class="btn shadow-sm btn-danger" type="button">Download</button>
+</div>
+<br>

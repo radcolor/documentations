@@ -1,0 +1,30 @@
+<h1 class="display-4">Compiling</h1>
+<p class="disc mb-0">
+  Features of kernel
+</p>
+<br>
+<p class="lead">
+  Create a <strong>out</strong> folder and export it
+</p>
+<pre><code class="language-shell">mkdir out && export OUT=${PATH_TO_OUT_FOLDER}</code></pre>
+<p class="lead">
+  make config, it can be whyred_defconfig(default whyred's configuration with support for old camera blobs) or
+  whyred-newcam_defconfig(default whyred's configuration with support for old camera blobs)
+</p>
+<pre><code class="language-shell">make O=${OUT} ${CONFIG}</code></pre>
+<p class="lead">
+  export BUILD_START
+</p>
+<pre><code class="language-shell">BUILD_START=$(date +"%s")</code></pre>
+<p class="lead">
+  make
+</p>
+<pre><code class="language-shell">make O=${OUT} -j${KBUILD_JOBS}</code></pre>
+<p class="lead">
+  copy Image.gz-dtb to anykernel3 directory
+</p>
+<pre><code class="language-shell">cp ${OUT}/arch/arm64/boot/Image.gz-dtb ${ANYKERNEL_DIR}/</code></pre>
+<p class="lead">
+  zip the files in anykernel3 directory
+</p>
+<pre><code class="language-shell">zip -r9 kernel.zip * -x README.md .git</code></pre>

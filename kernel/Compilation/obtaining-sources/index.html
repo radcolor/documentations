@@ -1,0 +1,53 @@
+<h1 class="display-4">Getting Sources and TCs</h1>
+<p class="disc mb-0">
+  Features of kernel
+</p>
+<br>
+<p class="lead">
+  <strong>Cloning Kernel Sources:</strong> Linux is a clone of the operating system Unix, written from scratch by
+  Linus Torvalds.
+  You can clone kernel-hmp(HMP branch) or kernel-eas(EAS branch) branch of kernel.
+</p>
+<pre><code class="language-shell">git clone https://github.com/theradcolor/android_kernel_xiaomi_whyred.git whyred_kernel</code></pre>
+<p class="lead">
+  <strong>Cloning GCC Compiler:</strong> GCC is a program language compiler developed by GNU. It is a set of free
+  software released under the GNU General Public License (GPL).
+  You can clone either NON ELF or ELF / BARE METAL GCC for compilation, also there are stable-gcc and master branch.
+  The only difference between these two branches is that stable-gcc is being built from stable release of gcc
+  whereas master is being built from master (Continous updating branch) of GCC's sources.
+</p>
+<p class="lead">
+  GCC NON ELF (stable-gcc)
+</p>
+<pre><code class="language-shell">git clone https://github.com/theradcolor/arm-linux-gnueabi -b stable-gcc --depth=1
+git clone https://github.com/theradcolor/aarch64-linux-gnu -b stable-gcc --depth=1</code></pre>
+<p class="lead">
+  GCC NON ELF (master)
+</p>
+<pre><code class="language-shell">git clone https://github.com/theradcolor/arm-linux-gnueabi -b master --depth=1
+git clone https://github.com/theradcolor/aarch64-linux-gnu -b master --depth=1</code></pre>
+<p class="lead">
+  GCC ELF / BARE METAL (stable-gcc)
+</p>
+<pre><code class="language-shell">git clone https://github.com/theradcolor/arm-eabi -b stable-gcc --depth=1
+git clone https://github.com/theradcolor/aarch64-elf -b stable-gcc --depth=1</code></pre>
+<p class="lead">
+  GCC ELF / BARE METAL (master)
+</p>
+<pre><code class="language-shell">git clone https://github.com/theradcolor/arm-eabi -b master --depth=1
+git clone https://github.com/theradcolor/aarch64-elf -b master --depth=1</code></pre>
+<p class="lead">
+  <strong>Clang:</strong> It is a compiler front end for the C, C++, Objective-C and Objective-C++ programming
+  languages, as well as the OpenMP, OpenCL, RenderScript, CUDA and HIP frameworks. It uses the LLVM compiler
+  infrastructure as its back end and has been part of the LLVM release cycle. It is designed to act
+  as a drop-in replacement for the GNU Compiler Collection (GCC).
+</p>
+<p class="lead">
+  <strong>Proton Clang:</strong> A LLVM and Clang compiler toolchain built for kernel development. Builds are always
+  made from the latest LLVM sources rather than stable releases, so complete stability cannot be guaranteed.
+</p>
+<pre><code class="language-shell">https://github.com/kdrag0n/proton-clang.git --depth=1</code></pre>
+<p class="lead">
+  <strong>AOSP Clang:</strong> A LLVM and Clang compiler toolchain by AOSP.
+</p>
+<pre><code class="language-shell">wget -q https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/master/clang-r416183b.tar.gz</code></pre>

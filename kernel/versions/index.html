@@ -1,0 +1,71 @@
+<h1 class="display-4">Varients</h1>
+<p class="disc mb-0">
+  About different versions and varients of rad kernel
+</p>
+<br>
+<p id="hmp" class="lead">
+  <strong>Heterogeneous Multi-Processing (HMP):
+  </strong>
+  This is the standard load scheduler for any big.LITTLE device released in past years. HMP makes use of the
+  big.LITTLE architecture, delegating low priority, less intensive work to the little
+  cores which consume less power. HMP is “safe” wherein it knows what should go to the big cores and what should go
+  to the little cores, without making mistakes. It just works and requires a lot less effort to set up on the
+  development side than something like EAS, which we’ll get into in a moment. HMP is just an extension of CFS to
+  make it power aware.
+  <br><br>
+  HMP doesn’t take guesses, nor does it predict future processes. This is good but is why the device cannot be as
+  fluid as those running EAS and is also why it consumes slightly more battery. This, finally, brings us to Energy
+  Aware Scheduling (EAS), which I firmly believe is the future in ROM and kernel development as more OEMs adopt it.
+</p>
+<p id="eas" class="lead">
+  <strong>Energy Aware Scheduling (EAS):</strong>
+  Energy Aware Scheduling is not as simple as it is not universal to every device like CFS or HMP. EAS requires an
+  understanding of the processor it is running on, based off of an energy model. These energy models are made by
+  teams of engineers constantly testing and working to give an optimal performance. <br><br>
+
+  Our whyred's stock kernel is HMP.
+</p>
+<p id="eas-vs-hmp" class="lead">
+  <strong>Which one to choose actually?</strong>
+  consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+  in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</p>
+<p id="camtype" class="lead">
+  <strong>Oldcam/Newcam: </strong>
+  About old/new cam builds
+
+  The newcam version is for ROMs which using new camera blobs and oldcam version is for ROMs which using old camera
+  blobs. Ask someone or the developer to ensure which blobs your ROM is using.
+</p>
+<p id="gcc" class="lead">
+  <strong>GNU Compiler Collection (GCC): </strong>
+  GCC is a program language compiler developed by GNU. It is a set of free software released under the GNU General
+  Public License (GPL) and GNU Lesser General Public License (LGPL). It is an official compiler for the GNU and
+  Linux systems, and a main compiler for compiling and creating other UNIX operating systems.
+</p>
+<p id="clang" class="lead">
+  <strong>LLVM Clang Compiler: </strong>
+  LLVM contains a series of modularized compiler components and tool chains. It can optimize program languages and
+  links during compilation, runtime, and idle time and generate code. LLVM can serve as a background for compilers
+  in multiple languages. Clang is a C, C++, Objective-C, or Objective-C++ compiler that is compiled in C++ based on
+  LLVM and released under the Apache 2.0 license. Clang is mainly used to provide performance superior to that of
+  GCC.
+</p>
+<p id="gcc-vs-clang" class="lead">
+  <strong>Which one to choose actually?</strong><br>
+  They are both open-source compiler infrastructures, used to build compilers for a variety of languages, with pretty
+  good code generation. Both are widely known for the C and C++ compilers they implement, much less so for other
+  languages.<br>
+  We can see that Clang offers more advantages for the construction of large projects while GCC is always advantageous
+  in performance optimization. The bla depends on your specific applicationC and C++ compilers they implement, much less
+  so for other languages.
+</p>
+<p id="lto" class="lead">
+  <strong>What is Link Time Optimization (LTO)?</strong><br>
+  Link Time Optimization (LTO) refers to program optimization during linking. The linker pulls all object files together
+  and combines them into one program. The linker can see the whole of the program, and can therefore do whole-program
+  analysis and optimization. However, normally the linker only gets to see the program when it has already been
+  translated into machine code. At that level, it should still be possible to do optimization but it is terribly hard.
+  GCC’s or LLVM’s optimizers cannot be used.
+</p>
